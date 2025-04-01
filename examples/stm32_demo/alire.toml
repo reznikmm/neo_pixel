@@ -1,0 +1,31 @@
+name = "stm32_demo"
+description = "An example for neopixel driver on stm32"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["stm32_demo"]
+
+[build-switches]
+development.optimization = ["-O0"]
+development.style_checks = ["-gnaty"]
+development.contracts = "Yes"
+
+[[depends-on]]
+gnat_arm_elf = "*"
+aa_stm32_drivers = "~0.1.0-dev"
+neo_pixel = "~0.1.0-dev"
+
+[[pins]]
+aa_stm32_drivers = { url='https://github.com/reznikmm/aa_stm32_drivers/' }
+neo_pixel = { path='../..' }
+
+[configuration.values]
+#aa_stm32_drivers.aa_mcu = "stm32f429disco"
+aa_stm32_drivers.aa_mcu = "stm32f4"
+cortex_m.core = "m4f"
