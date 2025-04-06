@@ -1,0 +1,17 @@
+pragma Partition_Elaboration_Policy (Sequential);
+--
+--  If the partition elaboration policy is Sequential, then task activation and
+--  interrupt attachment are performed in the following sequence of steps:
+--
+--  * The activation of all library-level tasks and the attachment of interrupt
+--    handlers are deferred until all library units are elaborated.
+--
+--  * The interrupt handlers are attached by the environment task.
+--
+--  * The environment task is suspended while the library-level tasks are
+--    activated.
+--
+--  * The environment task executes the main subprogram (if any) concurrently
+--    with these executing tasks.
+
+pragma Warnings (Off, "STM32"" is an internal GNAT");

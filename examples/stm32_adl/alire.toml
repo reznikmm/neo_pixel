@@ -1,0 +1,26 @@
+name = "stm32_adl"
+description = "An example for neopixel driver on stm32"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["stm32_adl"]
+
+[build-switches]
+development.optimization = ["-O0"]
+development.style_checks = ["-gnaty"]
+development.contracts = "Yes"
+
+[[depends-on]]
+gnat_arm_elf = "*"
+stm32f4xx_m_sfp = "*"
+neo_pixel = "~0.1.0-dev"
+
+[[pins]]
+neo_pixel = { path='../..' }
+stm32f4xx_m_sfp = { url='https://github.com/AdaCore/Ada_Drivers_Library', subdir='boards/stm32f4xx_m' }
