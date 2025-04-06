@@ -1,7 +1,12 @@
+--  SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
+--
+--  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+----------------------------------------------------------------
+
 with "config/neo_pixel_config.gpr";
 project Neo_Pixel is
 
-   for Library_Name use "Neo_Pixel";
+   for Library_Name use "neo_pixel";
    for Library_Version use Project'Library_Name & ".so." & Neo_Pixel_Config.Crate_Version;
 
    for Source_Dirs use ("src/", "config/");
