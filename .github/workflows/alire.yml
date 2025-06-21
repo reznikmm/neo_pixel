@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Max Reznik <reznikmm@gmail.com>
+# SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
 #
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
@@ -16,3 +16,6 @@ jobs:
       run: alr build
     - name: Build example
       run: alr test
+    - name: Dump log
+      if: ${{ failure() }}
+      run: cat alire/alr_test_local.log

@@ -1,3 +1,8 @@
+--  SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
+--
+--  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+----------------------------------------------------------------
+
 with "config/aa_stm32_config.gpr";
 with "aa_stm32_drivers.gpr";
 
