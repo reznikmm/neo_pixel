@@ -1,0 +1,23 @@
+name = "aa_stm32"
+description = "Neo Pixel demo with aa_stm32_drivers"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["aa_stm32"]
+
+[[depends-on]]
+neo_pixel = "~0.1.0-dev"
+aa_stm32_drivers = "~0.1.0-dev"
+
+[[pins]]
+neo_pixel        = { path='../..' }
+aa_stm32_drivers = { url='https://github.com/reznikmm/aa_stm32_drivers' }
+
+[configuration.values]
+aa_stm32_drivers.aa_mcu = "stm32f4"
