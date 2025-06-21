@@ -13,3 +13,7 @@ tags = ["driver", "led"]
 development.optimization = ["-O0"]
 development.style_checks = ["-gnaty"]
 development.contracts = "Yes"
+
+[[actions]]
+type = "test"
+command = ["alr", "-C", "examples/aa_stm32", "build"]
