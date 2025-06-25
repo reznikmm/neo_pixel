@@ -1,0 +1,30 @@
+// SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
+//
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build adl_stm32 example",
+            "type": "shell",
+            "command": "alr build",
+            "problemMatcher": ["$ada"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Flash adl_stm32 with ST-Util",
+            "type": "shell",
+            "command": "alr exec -- arm-eabi-objcopy -O binary bin/adl_stm32 bin/adl_stm32.bin && st-flash --connect-under-reset write bin/adl_stm32.bin 0x08000000",
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash adl_stm32 with OpenOCD",
+            "type": "shell",
+            "command": "alr exec -- arm-eabi-objcopy -O binary bin/adl_stm32 bin/adl_stm32.bin && openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c 'program bin/adl_stm32.bin verify reset exit 0x08000000'",
+            "problemMatcher": []
+        }
+    ]
+}

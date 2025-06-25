@@ -115,10 +115,10 @@ directory.
 
 Make sure `alr` is in your `PATH`.
 
-Open the `examples` folder in VS Code. Pre-configured tasks are
+Open the example folder in VS Code. Pre-configured tasks are
 available to build projects and flash (using `OpenOCD` or `st-util`).
-Install the Cortex Debug extension to launch pre-configured debugger
-targets.
+Install the Cortex Debug extension and `gdb-multiarch`
+to launch pre-configured debugger targets.
 
 ## Maintainer
 

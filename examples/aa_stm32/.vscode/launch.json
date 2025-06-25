@@ -1,0 +1,30 @@
+// SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
+//
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/bin/aa_stm32",
+            "name": "Debug aa_stm32 with OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": ["interface/stlink.cfg", "target/stm32f4x.cfg"],
+            "searchDir": [],
+            "preLaunchCommands": ["monitor arm semihosting enable"],
+            "showDevDebugOutput": "none"
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/bin/aa_stm32",
+            "name": "Debug aa_stm32 with ST-Util",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "stutil",
+            "serverArgs": ["--semihosting"],
+            "showDevDebugOutput": "none"
+        }
+    ]
+}
