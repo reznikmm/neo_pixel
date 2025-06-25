@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 Max Reznik <reznikmm@gmail.com>
+#
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+name = "adl_stm32"
+description = "Neo Pixel demo with Ada Drivers Library for stm32f4xx_m"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["adl_stm32"]
+
+[[depends-on]]
+gnat_arm_elf = "^15.1.2"
+stm32f4xx_m_sfp = "*"
+neo_pixel = "*"
+
+[[pins]]
+stm32f4xx_m_sfp = { url='https://github.com/AdaCore/Ada_Drivers_Library', subdir='boards/stm32f4xx_m' }
+neo_pixel       = { path='../..' }

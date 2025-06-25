@@ -95,29 +95,27 @@ above 50µs.
 
 ## Examples
 
-A complete [example project](examples/aa_stm32/), built with
-`aa_stm32_drivers`, is provided to demonstrate the library's usage
-on an `STM32F4XX-M` board.
+Two complete example projects are provided to demonstrate the library's
+usage on an `STM32F4XX-M` board.
+The [first one](examples/aa_stm32/) was built with
+[`aa_stm32_drivers`](https://github.com/reznikmm/aa_stm32_drivers).
 
-To build the examples, ensure you have Alire installed and run:
+The [second examlpe](examples/adl_stm32/) uses
+[`Ada Drivers Library`](https://github.com/AdaCore/Ada_Drivers_Library).
 
-```bash
-alr -C examples/aa_stm32 build
-```
+To build the examples, ensure you have Alire installed and run `alr build`
+in the corresponding dirrectory.
 
 ### GNAT Studio
 
-Launch GNAT Studio with Alire:
-
-```bash
-alr -C examples/aa_stm32 exec gnatstudio
-```
+Make sure `alr` is in your `PATH` then launch GNAT Studio in the example
+directory.
 
 ### VS Code
 
 Make sure `alr` is in your `PATH`.
 
-Open the `examples/aa_stm32` folder in VS Code. Pre-configured tasks are
+Open the `examples` folder in VS Code. Pre-configured tasks are
 available to build projects and flash (using `OpenOCD` or `st-util`).
 Install the Cortex Debug extension to launch pre-configured debugger
 targets.
